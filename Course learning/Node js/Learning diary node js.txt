@@ -2,3 +2,8 @@ I have (re)learned how to use the postman with GET and POST methods. I have also
 Node js is not the best possible option when used alone but as I go further along with the lectures, I will bring back to memory the
 mongo DB, express, and react which will greatly ease my work.
 So far I have just written everything that the video has shown me, but I have tried the things that he has mentioned and some things that have come up for me.
+In the end, I remembered using some of these in my other course for full stack coding, but a lot had already been lost in a yaer.
+Some of these were completely new to me as our previous course only went through the most common ones and went with the best methods, but this
+course gave me options to use, but I still prefer the tools used in my previous express and node courses.
+this video tutorial went through the basic tools of Node js and I think they will probably be useful in some situation in a point of time.
+Cant wait for the next lecture which is about mongoDB
