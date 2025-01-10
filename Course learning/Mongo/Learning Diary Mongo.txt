@@ -2,4 +2,6 @@ I didn't feel like going through the commandline mongo db tutorial so I just bro
 Instead of using the cloud version I hosted the server on my computer, which is something that i was already used to.
 I had some help with setting this up by github copilot.
 I got a little carried away with testing out the mongo and created a simple html that fetches and sends data to the mongoDB server.
-Overall, I started to remember how to use express and paths and node js and mongo together
+Overall, I started to remember how to use express and paths and node js and mongo together.
+In no way did this become the most cleanest version I could do but it was created quite fast. I remember doing these things a little differently
+during the other full stack course. I hope I get a little clearer picture from the express lecture.
