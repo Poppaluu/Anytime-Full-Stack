@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB Demo</title>
+  </head>
+  <body>
+    <h1>MongoDB Demo</h1>
+    <button id="insertBtn">Insert Document</button>
+    <button id="fetchBtn">Fetch Documents</button>
+    <pre id="output"></pre>
+
+    <script>
+      document
+        .getElementById("insertBtn")
+        .addEventListener("click", async () => {
+          const response = await fetch("/insert", { method: "POST" });
+          const result = await response.json();
+          document.getElementById("output").textContent = JSON.stringify(
+            result,
+            null,
+            2
+          );
+        });
+
+      document
+        .getElementById("fetchBtn")
+        .addEventListener("click", async () => {
+          const response = await fetch("/documents");
+          const documents = await response.json();
+          document.getElementById("output").textContent = JSON.stringify(
+            documents,
+            null,
+            2
+          );
+        });
+    </script>
+  </body>
+</html>

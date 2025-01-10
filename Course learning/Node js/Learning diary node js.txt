@@ -6,4 +6,4 @@ In the end, I remembered using some of these in my other course for full stack c
 Some of these were completely new to me as our previous course only went through the most common ones and went with the best methods, but this
 course gave me options to use, but I still prefer the tools used in my previous express and node courses.
 this video tutorial went through the basic tools of Node js and I think they will probably be useful in some situation in a point of time.
-Cant wait for the next lecture which is about mongoDB
+Cant wait for the next lecture which is about mongoDB.
