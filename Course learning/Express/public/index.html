@@ -3,13 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Front Page</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Posts</title>
   </head>
   <body>
-    <header>
-      <h1>Welcome to My Website</h1>
-    </header>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -30,17 +26,17 @@
       <button id="get-posts-btn">Get Posts</button>
       <div id="output"></div>
       <h2>Add Post</h2>
-      <form action="add-post-form">
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" /><br>
-        <label for="content">Content</label><br>
-        <input type="text" id="content" name="content" /><br>
+      <form id="add-post-form" action="#">
+        <label for="title">Title:</label><br />
+        <input type="text" id="title" name="title" required /><br />
+        <label for="content">Content:</label><br />
+        <input type="text" id="content" name="content" required /><br />
         <button type="submit">Add Post</button>
       </form>
     </main>
     <footer>
       <p>&copy; 2023 My Website</p>
     </footer>
-  </body>
     <script src="./js/main.js"></script>
   </body>
+</html>
