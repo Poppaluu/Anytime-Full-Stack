@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import posts from './routes/posts.js';
 import logger from './middleware/logger.js';
 import errorHandler from './middleware/error.js';
+import notFound from './middleware/notFound.js';
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger);
 
 // Setup static folder
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -32,6 +33,8 @@ app.get('/about', (req, res) => {
 });
 
 app.use('/api/posts', posts);
+
+app.use(notFound);
 
 // Error handler
 app.use(errorHandler);
