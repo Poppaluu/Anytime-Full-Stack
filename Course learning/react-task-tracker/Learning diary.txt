@@ -1,0 +1,7 @@
+This was definately the hardest of the courses so far. so much more was given during the lectures and these subjects were harder to wrap my head around
+after playing with the functions a little myself, I think I have it down better than before the course.
+I remember doing these in the other full stack course with the front end and back end servers being different which is something that 
+was re introduced to me during this course which was nice. I really think that this could have benefitted from having mongoose in it
+as I dont think that Static data is something that is commonly used writte on a file somewhere in the structure but I might be wrong
+I also like playing with the databases and gives the whole thing a little more sense atleast thats what I think as you only need
+to update the database. 
