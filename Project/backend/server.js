@@ -1,16 +1,16 @@
 const express = require('express');
+const { errorHandler } = require('./middleware/errorMiddleware');
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Hello World!' });
-    });
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.get('/api', (req, res) => {
-    res.status(200).json({ message: 'Hello from the API!' });
-    });
+app.use('/api/goals', require('./routes/goalRoutes'));
+
+app.use(errorHandler);
     
 
 app.listen(port, () => {
