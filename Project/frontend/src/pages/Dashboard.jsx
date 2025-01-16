@@ -1,58 +1,50 @@
-import { useEffect } from "react"
-import {useNavigate} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
-import GoalForm from "../components/GoalForm"
-import Spinner from '../components/Spinner'
-import {getGoals, reset} from '../features/goals/goalSlice'
-import {toast} from 'react-toastify'
-import GoalItem from '../components/GoalItem'
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import Spinner from '../components/Spinner';
+import GoalForm from '../components/GoalForm';
+import GoalItem from '../components/GoalItem';
+import EldenRingComponent from '../components/EldenRingComponent';
+import { getGoals, reset as resetGoals } from '../features/goals/goalSlice';
 
 function Dashboard() {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const {user} = useSelector((state) => state.auth)
-  const {goals, isLoading, isError, message} = useSelector((state) => state.goals)
+  const { user } = useSelector((state) => state.auth);
+  const { goals, isLoading, isError, message } = useSelector((state) => state.goals);
 
   useEffect(() => {
-    if (isError){
-      toast.error(message)
+    if (isError) {
+      toast.error(message);
     }
 
-    if(!user){
-      navigate('/login')
+    if (!user) {
+      navigate('/login');
+    } else {
+      dispatch(getGoals());
     }
-
-    dispatch(getGoals())
 
     return () => {
-      dispatch(reset())
-    }
-  }, [user, navigate, isError, dispatch, message])
+      dispatch(resetGoals());
+    };
+  }, [user, navigate, isError, message, dispatch]);
 
-  if(isLoading) {
-    return <Spinner/>
+  if (isLoading) {
+    return <Spinner />;
   }
 
   return (
     <>
-    <section className="heading">
-      <h1>Welcome {user && user.name} </h1>
-      <p>Goals Dashboard</p>
-    </section>
-    <GoalForm/>
+      <section className="heading">
+        <h1>Welcome {user && user.name}</h1>
+        <p>How many can you kill before the timer runs out?</p>
+      </section>
 
-    <section className="content">
-      {goals.length > 0 ? (
-        <div className="goals">
-          {goals.map((goal) => (
-            <GoalItem key={goal._id} goal={goal}/>
-          ))}
-        </div>
-      ) : (<h3> you have not set any goals</h3>)}
-    </section>
+      <EldenRingComponent />
     </>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

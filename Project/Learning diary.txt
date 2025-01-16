@@ -1,0 +1,12 @@
+That package of 4 videos was quite something. The backend is quite easy and I could do it without breaking my brain.
+redux on the other hand was somethign ive never even heard of and the syntax of it was quite hard.
+at least for someone seeing it for the first time. I dont think ive used axios either but that was fun.
+I think I understand some of the redux now that I did some implementations of my own but still needed some help from
+AI tools on the Component which now looks quite funky but works :D.
+definately learned a lot during these two weeks that I did this course in. quite long days those were.
+there is something in learning by watching videos and copying code form the video that gets quite repetetive
+at some point. I also was quite tired at some points where I was still watching the videos and doing this course at 8pm.
+I now understand better the structure of full stack applications and this is valuable experience for getting work at some point.
+
+That proxy came back to haunt me. I remember on the advanced webapplications course that the proxy didnt work and sure enough it didnt work this time either.
+I just put the whole address into the API variable(which is not recommended for security reasons but this is a localhost environment so whats the worst that could happen right)
