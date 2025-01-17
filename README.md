@@ -11,3 +11,5 @@ To use any of these project on your own machine:
 3. open your browser if it has not opened automatically and go to http://localhost:5000/ for the backend and http://localhost:3000/ for the frontend
 
 heres the video to the showcasing of the project: [text](https://www.youtube.com/watch?v=knmTvoFen9I&ab_channel=matiastarvainen)
+
+if there is a problem with the project, please contact me through matias.tarvainen@student.lut.fi
