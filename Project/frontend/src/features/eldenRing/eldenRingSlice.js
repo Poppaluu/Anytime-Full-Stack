@@ -4,6 +4,8 @@ import eldenRingService from './eldenRingService';
 const initialState = {
   creatures: [],
   bosses: [],
+  score: 0,
+  timer: 100,
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -16,7 +18,7 @@ export const fetchCreatures = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const creatures = await eldenRingService.getCreatures();
-      console.log('Fetched creatures:', creatures); // Debug
+      console.log('Fetched creatures:', creatures); // Debug log
       return creatures;
     } catch (error) {
       const message =
@@ -34,7 +36,7 @@ export const fetchBosses = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const bosses = await eldenRingService.getBosses();
-      console.log('Fetched bosses:', bosses); // Debug
+      console.log('Fetched bosses:', bosses); // Debug log
       return bosses;
     } catch (error) {
       const message =
@@ -46,11 +48,24 @@ export const fetchBosses = createAsyncThunk(
   }
 );
 
+
 const eldenRingSlice = createSlice({
   name: 'eldenRing',
   initialState,
   reducers: {
     reset: (state) => initialState,
+    incrementScore: (state, action) => {
+      state.score += action.payload;
+    },
+    removeBoss: (state, action) => {
+      state.bosses = state.bosses.filter(boss => boss.id !== action.payload);
+    },
+    removeCreature: (state, action) => {
+      state.creatures = state.creatures.filter(creature => creature.id !== action.payload);
+    },
+    incrementTimer: (state, action) => {
+      state.timer -= action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -83,5 +98,5 @@ const eldenRingSlice = createSlice({
   },
 });
 
-export const { reset } = eldenRingSlice.actions;
+export const { reset, incrementScore, incrementTimer, removeCreature, removeBoss } = eldenRingSlice.actions;
 export default eldenRingSlice.reducer;

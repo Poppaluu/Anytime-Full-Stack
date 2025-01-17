@@ -1,4 +1,7 @@
-Learned more about express. Learned how to use and what is a static express load.
+Learning diary, Express module
+
+Learning diary:
+Learned more about express, which was familiar to me already form the advanced web applications course. Learned how to use and what is a static express load.
 Created a couple of middlewares to ease the use of reoccurring code.
 created error handilng middleware. 
 This lecture has been more of what I remember the full stack course being. The ES6 usage and separate files for routes and such.
